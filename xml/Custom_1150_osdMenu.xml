@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1150">
+  <defaultcontrol always="true">202</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <coordinates>
+    <origin x="50" y="140"/>
+  </coordinates>
+  <controls>
+    <control type="button">
+      <left>-1920</left>
+      <top>-1080</top>
+      <width>5760</width>
+      <height>3240</height>
+      <texturefocus/>
+      <texturenofocus/>
+      <onclick>Action(close)</onclick>
+    </control>
+    <include content="DialogBackgroundCommons">
+      <param name="width" value="480"/>
+      <param name="height" value="415"/>
+      <param name="header_label" value="$LOCALIZE[31440]"/>
+      <param name="header_id" value="999"/>
+    </include>
+    <include content="DefaultSettingButtonGradient">
+      <param name="id" value="202"/>
+      <top>80</top>
+      <left>0</left>
+      <height>75</height>
+      <width>480</width>
+      <visible>true</visible>
+    </include>
+    <control type="grouplist" id="202">
+      <left>0</left>
+      <top>80</top>
+      <width>480</width>
+      <height>300</height>
+      <align>left</align>
+      <onup>204</onup>
+      <ondown>203</ondown>
+      <scrolltime tween="sine">200</scrolltime>
+      <orientation>vertical</orientation>
+      <visible>!VideoPlayer.Content(livetv) | VideoPlayer.HasMenu | Integer.IsGreater(Playlist.Length(video),1) | !VideoPlayer.Content(livetv) | VideoPlayer.HasSubtitles | VideoPlayer.IsStereoscopic</visible>
+      <control type="button" id="70048">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <onclick>Dialog.Close(1150)</onclick>
+        <onclick>SetProperty(settingslist_content,osd,home)</onclick>
+        <label>$LOCALIZE[21417]</label>
+        <onclick>SetProperty(settingslist_header,$LOCALIZE[5],home)</onclick>
+        <onclick>ActivateWindow(1101)</onclick>
+      </control>
+      <control type="button" id="803">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[10116]</label>
+        <onclick>Dialog.Close(1150)</onclick>
+        <onclick>ActivateWindow(playerprocessinfo)</onclick>
+        <visible>!VideoPlayer.Content(livetv)</visible>
+      </control>
+      <control type="button" id="804">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[13395]</label>
+        <onclick>Dialog.Close(1150)</onclick>
+        <onclick>PlayerControl(ShowVideoMenu)</onclick>
+        <visible>VideoPlayer.HasMenu</visible>
+      </control>
+      <control type="button" id="70044">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[10125]</label>
+        <onclick>Dialog.Close(1150)</onclick>
+        <onclick>ActivateWindow(videobookmarks)</onclick>
+        <visible>!VideoPlayer.Content(livetv)</visible>
+      </control>
+      <control type="button" id="70046">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <onclick>Dialog.Close(1150)</onclick>
+        <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
+        <label>$LOCALIZE[24133]</label>
+        <visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasSubtitles</visible>
+      </control>
+      <control type="button" id="70047">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <visible>VideoPlayer.IsStereoscopic</visible>
+        <onclick>Dialog.Close(1150)</onclick>
+        <onclick>SetProperty(settingslist_content,3d,home)</onclick>
+        <label>$LOCALIZE[14232]</label>
+        <onclick>SetProperty(settingslist_header,$LOCALIZE[36501],home)</onclick>
+        <onclick>ActivateWindow(1101)</onclick>
+      </control>
+      <!-- music osd menu -->
+      <control type="button" id="70040">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[19019]</label>
+        <onclick>Dialog.Close(MusicOSD)</onclick>
+        <onclick>ActivateWindow(PVROSDChannels)</onclick>
+        <visible>MusicPlayer.Content(LiveTV)</visible>
+      </control>
+      <control type="button" id="70041">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[19069]</label>
+        <onclick>Dialog.Close(MusicOSD)</onclick>
+        <onclick>ActivateWindow(PVRChannelGuide)</onclick>
+        <visible>MusicPlayer.Content(LiveTV) + VideoPlayer.HasEPG</visible>
+      </control>
+      <control type="button" id="70050">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[14304]</label>
+        <onclick>Dialog.Close(MusicOSD)</onclick>
+        <onclick>ActivateWindow(PVRRadioRDSInfo)</onclick>
+        <visible>MusicPlayer.Content(LiveTV) + RDS.HasRadiotext</visible>
+      </control>
+      <control type="button" id="70051">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[559]</label>
+        <onclick>Dialog.Close(all, true)</onclick>
+        <onclick>ActivateWindow(musicplaylist)</onclick>
+        <visible>Integer.IsGreater(Playlist.Length(music),0) + [VideoPlayer.Content(musicosd) | VideoPlayer.Content(files)]</visible>
+      </control>
+      <control type="button" id="70058">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[38023]</label>
+        <onclick>SetRating</onclick>
+        <visible>[VideoPlayer.Content(musicosd) | VideoPlayer.Content(files)]</visible>
+      </control>
+      <control type="button" id="70053">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[486]</label>
+        <onclick>PlayerControl(Repeat)</onclick>
+        <visible>[VideoPlayer.Content(musicosd) | VideoPlayer.Content(files)]</visible>
+      </control>
+      <control type="radiobutton" id="70054">
+        <width>480</width>
+        <height>75</height>
+        <include>DialogSettingButton</include>
+        <label>$LOCALIZE[590]</label>
+        <onclick>PlayerControl(Repeat)</onclick>
+        <selected>Playlist.IsRandom</selected>
+        <visible>![MusicPlayer.Content(LiveTV) | MusicPartyMode.Enabled] + [VideoPlayer.Content(musicosd) | VideoPlayer.Content(files)]</visible>
+        <onclick>PlayerControl(Random)</onclick>
+      </control>
+      <control type="button" id="70055">
+        <include>DialogSettingButton</include>
+        <width>480</width>
+        <height>75</height>
+        <label>$LOCALIZE[24013]</label>
+        <onclick>Close</onclick>
+        <onclick condition="!String.IsEmpty(Skin.String(LyricScript_Path))">RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+        <onclick condition="String.IsEmpty(Skin.String(LyricScript_Path))">Skin.SetAddon(LyricScript_Path,xbmc.python.lyrics)</onclick>
+        <onclick condition="String.IsEmpty(Skin.String(LyricScript_Path))">Close</onclick>
+        <onclick condition="String.IsEmpty(Skin.String(LyricScript_Path))">RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+        <visible>VideoPlayer.Content(musicvideos)</visible>
+      </control>
+      <control type="button" id="70056">
+        <include>DialogSettingButton</include>
+        <width>480</width>
+        <height>75</height>
+        <label>$LOCALIZE[10120]</label>
+        <onclick>ActivateWindow(1105)</onclick>
+        <visible>VideoPlayer.Content(musicvideos)</visible>
+      </control>
+    </control>
+    <include content="UpDownArrows">
+      <param name="container_id" value="202"/>
+      <param name="posx" value="210"/>
+      <param name="up_posy" value="-70"/>
+      <param name="down_posy" value="460"/>
+    </include>
+  </controls>
+</window>

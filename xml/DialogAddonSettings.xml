@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+  <defaultcontrol>5</defaultcontrol>
+  <include>Animation_DialogPopupOpenClose</include>
+  <onload>RunScript(plugin.video.themoviedb.helper,blur_image=$INFO[Window(home).Property(infobackground)])</onload>
+  <controls>
+    <control type="group">
+      <top>0</top>
+      <centerleft>50%</centerleft>
+      <width>1920</width>
+      <include>Animation_DialogPopupVisible</include>
+      <include content="DialogBackgroundCommonsBlur">
+        <param name="width" value="1920"/>
+        <param name="height" value="1080"/>
+        <param name="header_label" value=""/>
+        <param name="header_id" value=""/>
+        <param name="closebutton_visible" value="false"/>
+      </include>
+      <control type="group">
+        <control type="image">
+          <left>50</left>
+          <top>180</top>
+          <width>320</width>
+          <height>320</height>
+          <aspectratio>keep</aspectratio>
+          <texture>$INFO[ListItem.Icon]</texture>
+        </control>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <top>0</top>
+        <height>95</height>
+        <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <top>95</top>
+        <height>1</height>
+        <texture colordiffuse="main_fg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <bottom>0</bottom>
+        <height>95</height>
+        <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <bottom>95</bottom>
+        <height>1</height>
+        <texture colordiffuse="main_fg_30">common/white.png</texture>
+      </control>
+      <control type="image">
+        <left>0</left>
+        <top>92</top>
+        <width>240</width>
+        <height>5</height>
+        <texture colordiffuse="main_fg_100">common/white.png</texture>
+        <visible>ControlGroup(3).HasFocus</visible>
+        <animation effect="slide" start="0,0" end="0,0" time="0" condition="Integer.IsEqual(Container(3).Position,0)">conditional</animation>
+        <animation effect="slide" start="0,0" end="240,0" time="0" condition="Integer.IsEqual(Container(3).Position,1)">conditional</animation>
+        <animation effect="slide" start="0,0" end="480,0" time="0" condition="Integer.IsEqual(Container(3).Position,2)">conditional</animation>
+        <animation effect="slide" start="0,0" end="720,0" time="0" condition="Integer.IsEqual(Container(3).Position,3)">conditional</animation>
+        <animation effect="slide" start="0,0" end="960,0" time="0" condition="Integer.IsEqual(Container(3).Position,4)">conditional</animation>
+        <animation effect="slide" start="0,0" end="1200,0" time="0" condition="Integer.IsEqual(Container(3).Position,5)">conditional</animation>
+        <animation effect="slide" start="0,0" end="1440,0" time="0" condition="Integer.IsEqual(Container(3).Position,6)">conditional</animation>
+        <animation effect="slide" start="0,0" end="1680,0" time="0" condition="Integer.IsGreaterOrEqual(Container(3).Position,7)">conditional</animation>
+      </control>
+      <control type="grouplist" id="3">
+        <description>Categories Area</description>
+        <left>0</left>
+        <top>0</top>
+        <width>1920</width>
+        <height>70</height>
+        <itemgap>0</itemgap>
+        <orientation>horizontal</orientation>
+        <onleft>noop</onleft>
+        <onright>noop</onright>
+        <onup>5</onup>
+        <ondown>5</ondown>
+      </control>
+      <control type="button" id="10">
+        <description>Default Category Button</description>
+        <height>95</height>
+        <width>240</width>
+        <textoffsetx>20</textoffsetx>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font_menu</font>
+        <texturefocus/>
+        <texturenofocus/>
+      </control>
+      <include content="DefaultAddonSettingButtonGradient">
+        <param name="id" value="5"/>
+        <top>140</top>
+        <right>0</right>
+        <width>1500</width>
+        <height>75</height>
+        <visible>ControlGroup(5).HasFocus()</visible>
+      </include>
+      <control type="grouplist" id="5">
+        <description>control area</description>
+        <right>0</right>
+        <top>140</top>
+        <width>1500</width>
+        <height>825</height>
+        <pagecontrol>60</pagecontrol>
+        <onup>3</onup>
+        <onleft>9000</onleft>
+        <onright>60</onright>
+      </control>
+      <control type="label">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>600</width>
+        <height>70</height>
+        <align>left</align>
+        <aligny>center</aligny>
+        <font>font30_title_upp</font>
+        <textcolor>dialog_fg_100</textcolor>
+        <label>$INFO[ListItem.Label]</label>
+      </control>
+      <control type="textbox" id="6">
+        <description>description area</description>
+        <bottom>10</bottom>
+        <right>20</right>
+        <width>1100</width>
+        <height>70</height>
+        <font>font12</font>
+        <align>right</align>
+        <aligny>center</aligny>
+        <textcolor>$VAR[ColorHighlight]</textcolor>
+        <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+      </control>
+      <control type="button" id="7">
+        <description>Default Button</description>
+        <include>DefaultSettingButton</include>
+      </control>
+      <control type="radiobutton" id="8">
+        <description>Default RadioButton</description>
+        <include>DefaultSettingButton</include>
+        <textwidth>880</textwidth>
+      </control>
+      <control type="spincontrolex" id="9">
+        <description>Default SpinControlex</description>
+        <include>DefaultSettingButton</include>
+      </control>
+      <control type="edit" id="12">
+        <include>DefaultSettingButton</include>
+      </control>
+      <control type="sliderex" id="13">
+        <description>Default Slider</description>
+        <include>DefaultSettingButton</include>
+        <textwidth>700</textwidth>
+      </control>
+      <control type="label" id="14">
+        <description>Default Label</description>
+        <include>DefaultSettingLabel</include>
+      </control>
+      <control type="grouplist" id="9000">
+        <top>500</top>
+        <left>70</left>
+        <orientation>vertical</orientation>
+        <width>270</width>
+        <height>500</height>
+        <itemgap>12</itemgap>
+        <onup>3</onup>
+        <onleft>5</onleft>
+        <onright>5</onright>
+        <align>center</align>
+        <aligny>center</aligny>
+        <include content="DefaultDialogButton">
+          <param name="id" value="28"/>
+          <param name="label" value=""/>
+        </include>
+        <include content="DefaultDialogButton">
+          <param name="id" value="29"/>
+          <param name="label" value=""/>
+        </include>
+        <include content="DefaultDialogButton">
+          <param name="id" value="30"/>
+          <param name="label" value=""/>
+        </include>
+        <include content="DefaultDialogButton">
+          <param name="id" value="20"/>
+          <param name="label" value=""/>
+          <onclick>SettingsLevelChange</onclick>
+        </include>
+      </control>
+      <control type="scrollbar" id="60">
+        <left>1910</left>
+        <top>140</top>
+        <width>12</width>
+        <height>825</height>
+        <orientation>vertical</orientation>
+        <onleft>5</onleft>
+        <onright>9000</onright>
+        <animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
+        <animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+      </control>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+  <include name="View_56_Posters">
+    <control type="group">
+      <top>25</top>
+      <visible>Control.IsVisible(56)</visible>
+      <include>OpenClose_Bottom</include>
+      <control type="group">
+        <left>635</left>
+        <top>0</top>
+        <height>245</height>
+        <visible>ListItem.IsCollection + String.IsEmpty(ListItem.PlotOutline) + String.IsEmpty(ListItem.Plot)</visible>
+        <include content="InfoList">
+          <param name="bottom" value="0"/>
+          <param name="sortby" value="year"/>
+          <param name="sortorder" value="ascending"/>
+          <param name="font" value="font13"/>
+        </include>
+      </control>
+      <control type="group">
+        <visible>!String.IsEmpty(Container(56).ListItem.Title)</visible>
+        <control type="group">
+          <left>600</left>
+          <include content="Object_Item_Showcase">
+            <param name="title" value="$VAR[Label_Title]"/>
+            <param name="title_width" value="1000" />
+            <param name="plot" value="$VAR[Label_PlotTextBoxVar]"/>
+            <param name="videoinfo_line_top" value="520"/>
+            <param name="visible_condi" value="Control.IsVisible(56)"/>
+          </include>
+        </control>
+      </control>
+      <control type="group">
+        <description>Poster Viewtype</description>
+        <centertop>50%</centertop>
+        <height>720</height>
+        <control type="group">
+          <visible>Control.IsVisible(56)</visible>
+          <control type="fixedlist" id="56">
+            <top>466</top>
+            <left>630</left>
+            <right>60</right>
+            <width>70%</width>
+            <height>704</height>
+            <focusposition>1</focusposition>
+            <movement>1</movement>
+            <pagecontrol>5199</pagecontrol>
+            <scrolltime tween="cubic" easing="out">500</scrolltime>
+            <orientation>horizontal</orientation>
+            <onleft>56</onleft>
+            <onup>SetFocus(9000)</onup>
+            <ondown>5199</ondown>
+            <onright>56</onright>
+            <visible>Container.Content(movies) | Container.Content(seasons) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(games)</visible>
+            <preloaditems>1</preloaditems>
+            <viewtype label="31254">icon</viewtype>
+            <include content="View_Forced">
+              <param name="string" value="$LOCALIZE[31254]"/>
+            </include>
+            <itemlayout width="317" height="407">
+              <control type="group">
+                <include content="View_56_Posters_Layout">
+                  <param name="WallWatchedIconVar_visible" value="false"/>
+                </include>
+                <include content="View_WatchedOverlay">
+                  <param name="bottom" value="12"/>
+                  <param name="right" value="52"/>
+                  <param name="visible" value="false"/>
+                </include>
+              </control>
+            </itemlayout>
+            <focusedlayout width="317" height="407">
+              <control type="group">
+                <include content="View_56_Posters_Layout">
+                  <param name="WallWatchedIconVar_visible" value="false"/>
+                </include>
+                <control type="group">
+                  <top>-10</top>
+                  <left>22</left>
+                  <width>276</width>
+                  <height>420</height>
+                  <include content="Selectbox">
+                    <param name="visible" value="$PARAM[focused]"/>
+                  </include>
+                </control>
+                <include content="View_WatchedOverlay">
+                  <param name="bottom" value="12"/>
+                  <param name="right" value="52"/>
+                  <param name="visible" value="true"/>
+                </include>
+              </control>
+            </focusedlayout>
+          </control>
+        </control>
+      </control>
+      <control type="group">
+        <control type="image">
+          <top>-50%</top>
+          <left>0</left>
+          <width>650</width>
+          <height>200%</height>
+          <texture colordiffuse="AltPosterBack">diffuse/poster-wall.png</texture>
+          <bordertexture border="21">overlays/shadow.png</bordertexture>
+          <bordersize>20</bordersize>
+        </control>
+        <control type="group">
+          <width>650</width>
+          <control type="image">
+            <height>750</height>
+            <width>500</width>
+            <centertop>50%</centertop>
+            <centerleft>50%</centerleft>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+            <texture diffuse="diffuse/poster-big.png">$INFO[Container(56).ListItem.Art(poster)]</texture>
+            <bordersize>24</bordersize>
+          </control>
+        </control>
+      </control>
+    </control>
+  </include>
+</includes>

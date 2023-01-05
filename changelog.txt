@@ -1,0 +1,210 @@
+1.2.6
+    Added Title to Tiles view
+    Reduced notification dialog shadow
+    Disabled blur and fixed watched overlay in Flix view
+    Visual changes to DialogProcessInfo
+    Added System.SupportsCPUUsage bool to DialogProcessInfo
+    Changes to Flix view
+    Enable autoscroll for plot
+    Fixed playlist button in osd
+    Added option to toggle blur on home screen vignette
+1.2.5
+    Added 505 Tiles view
+1.2.4
+    Fixed mouse support in LiveTV OSD
+1.2.3
+    Changed blur source
+    Improved background in SkinSettings @zuzia-dev
+1.2.2
+    Added floating setting button in video osd
+    Added TopBar to home screen and movies hub
+    Removed 19055 label from list view
+    Changes to background overlay
+    Fixed background overlay condition
+    Fixed movies hub busy spinner
+    Fixed searchlist visible condition when widgets are loading
+    Fixed background in infodialog
+    Fixed white poster highlight for landscape
+    Reduced clearlogo height in Object_Item_Showcase
+    Fixed white landscape highlight condition
+1.2.1
+    Fixed main menu bar background width
+    Added shadowspot under system time
+    Fixed menu bar width in movies hub
+    Fixed onback event in movieshub
+    Changed searchlist a bit
+1.2.0
+    Changes to colour palettes
+    Removed fade effect
+    Fixed preloading items
+    Changed main menu on homescreen
+    Added option to set icon for main menu
+    Added video fps to osd media flags
+    Visual tweaks to playerprocessinfo
+    Changed PVRChannelsOSDLayout_Modern
+    Fixed skinshortcuts widgets target
+    Fixed squares spacing in header widget
+    Added 401 marker to dialogseekbar
+    Added slider to video osd
+    Fixed blurred background
+    Changed source image for blurred background
+    Removed srolling text in settings
+    Changes to fullscreen fanart
+    Fixed header widget height
+    Added animation to widget scrolling
+    Fixed tv shows label on topbar overlapping
+    Tweaks to landscape aspect ratio
+    Fixed width in header widget
+    Fancy scrolling in movies hub
+    Fixed arrows and width in movies hub
+    Changed DialogPVRInfo look and feel
+    Changes to vignette and landscape
+    Changed PVRChannelGuideModern layout
+    Changed livetv osd buttons and playerprocessinfo
+    Added video codec flag to video osd
+    Changed landscape colordiffuse and textureslidernib colordiffuse
+    Fixed mediaflag_text visible condition
+    Changed font52 aspect
+    Changes to object_item_showcase
+    Added osd extended info
+1.1.4
+    Fixed: Dialog alpha control
+    Added: Button to Expose for switching to fullscreen video when playing trailer
+    Removed: "You are in hub" label from Movies hub
+    Added: Script ArtistSlideShow
+    Fixed: radiobutton in AddonDialogToggleButton
+    Small tweaks to AddonDialogToggleButton
+    Some tweaks and fixes to SearchList
+1.1.3
+    Just a bump for testing purposes
+1.1.2
+    Added: Watched indicators to header banners
+    Added: Option to enable fixed scrolling for each widget category
+    Changed: Skinshortcuts Layout
+    Tweaks to button size in skinshortcuts
+    Fixed: Visible condition in Fixed scrolling switch
+    Redesigned settings
+    Added: Topbar to settings home page
+    Open new settings screen without main settings page
+    Added: Add-ons and File Manager shortcuts and option to disable main menu tiles skip
+    Changed: DialogMediaSource layout tweaks
+    Changed: Default colour palette
+    Removed Light colour palette
+1.1.1
+    Fixed: Selectbox width over landscape focused layout
+    Added: Header widget label for square aspect ratio
+    Changed: Left/right arrows in widget sections
+    Update: Textures.xbt
+1.1.0
+    Fixed: Subtitle button on mouse hover
+    Added: Square aspect ratio (initial commit)
+    Added: Additional aspect ratios to header widget (initial commit)
+    Changed: source URL in addon.xml
+    Fixed: PVR icon in header Square aspect ratio
+    Fixed: Playing TV Shows from header widget
+    Added: Darken background for DialogKeyboard
+    Changed: DialogAddonSettings layout
+    Changed: DialogAddonInfo layout
+    Fixed: Small tweaks to Object_Info_Fist_Line
+    Fixed: visible condition in tv guide
+    Improved: tv guide
+1.0.10
+    Fixed: Clearlogo being cut off
+    Fixed: Right arrows position
+1.0.9
+    Fixed: Header widget label
+    Added: Scrollbars to script-skinshortcuts dialog window
+    Added: Movies hub indicator
+    Added: Option to set Movies Hub as a home screen
+    Added: Localizations
+    Fixed: Thin poster highlight
+    Removed: Some junk code
+    Fixed: Dark overlay in DialogSelect
+    Added: Poster aspect ratio - initial commit
+    Some tweaks to height of widget content
+    Added: Fade effect to widgets while scrolling
+    Fixed: Thin border on landscape art
+    Added: More information about selected item to widget label
+    Improved: Widgets and widgets labels
+1.0.8
+    Added: Option to set individual widgets for each menu entry in movies hub
+    Fixed: System settings background and shadows
+    Added: Option to set Dialog window background opacity
+    Changed: View_WatchedOverlay bottom margin
+1.0.7
+    Added: Option to change vignette colour to black
+    Changed: Dialog separator colordiffuse
+    Changed: Small tweaks to MediaMenu background
+    Fixed: Widgets behavior when empty widgets are between
+    Fixed: SearchList layout
+    Fixed: Empty space when no rating badge is present in Object_Item_Showcase
+    Fixed: Percentage rating on OSD aligny
+    Fixed: Shadow spot in Expose first level
+    Added: Watched indicators to home screen
+    Some tweaks to Expose view
+    Fixed: ClearProperties of Expose view
+    Small visual tweaks to main menu
+    Added: Movies Hub (initial commit - to test it go to customize main menu, set your menu entry to Common > Movies Hub)
+    Some tweaks related to Movies Hub
+    Added: Option to set unique background for each menu category
+    Added: Movies Hub to Common shortcuts list
+    Fixed: Background variable
+1.0.6
+    Some small tweaks to DialogAddonSettings
+    Some small tweaks to Object_Item_Showcase
+    Fixed: Width for badge in Object_Info_First_Line
+    Removed: Unused setting from skinsettings (switch ratings colour)
+    Changed: SearchList widgets
+    Added: Marker below submenu
+1.0.5
+    Fixed: Stop button trigerring in LiveTV OSD
+    Rewrite FirstExpose logic and add blur to it
+    Fixed: Object_Item_Showcase in InfoDialog
+    Fixed: InfoDialog background
+    Fixed: Blur in Expose 2
+    Changed: Animation time in InfoDialog
+    Changes to First level of Expose
+    Fixed: ListItem.Rating in Expose view
+    Small tweaks to SecondExpose
+1.0.4
+    Improved: Homescreen performance by reducing some animations
+    Removed: Fade effect from widgets
+    Fixed: Homescreen windowopen/windowclose animations
+    Fixed: Widgets gap
+    Fixed: Object_Item_Showcase
+    Added: Ratings to Object_Item_Showcase
+    Some improvements to Object_Item_Showcase
+    Removed: Old ratings references (+other old chunks)Changed: font_flag to font_tiny_hintlabel
+    Added: Left/Right arrows to widget section
+    Changed: "Local banners" to "Header widgets"
+    Fixed: Poster showcase view
+    Changed: Localization
+    Fixed: Localize for Custom_1150_osdMenu
+    Fixed: Flix view content, visible condition
+    Fixed: DefaultControl in OSD
+    Fixed: View_51_Poster for current Object_Item_Showcase
+    Fixed: Enable Trailers in background only when expose is enabled
+    Fixed: DialogAddonSettings grouplist height
+    Fixed: Play background trailer only with Expose enabled
+    Some fixes to Object_Info_Line
+    Fixed: Object_Video_Info_Line top margin
+    Fixed: Object_Info_First_Line
+1.0.3
+    Fixed: PVR progressbar transparency
+    Improved home screen animations
+    Improved: Mouse support on Home screen
+    Changed: font_menu style and aspect
+1.0.2
+    Some fixes to Template.xml
+    Fixed: Searchlist widget animation
+    Fixed: Object_Widget_Label
+    Added: Progressbar to Local banners when PVR widget is focused
+1.0.1
+    Removed: Some garbage code
+    Fixed: DialogVideoInfo layout
+    Show buttons area only when Expose is enabled
+    Removed: Useless button
+    Fixed: Ratings position in Flix view
+    Fixed: Blur onload
+    Some tweaks to main menu
+    Added: Clearlogo over fanart + option to disable this

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+  <defaultcontrol always="true">300</defaultcontrol>
+  <backgroundcolor>Background</backgroundcolor>
+  <include>Defs_Settings_OnLoad</include>
+  <controls>
+    <include content="DialogBackgroundCommonsBlur">
+      <param name="width" value="1920"/>
+      <param name="height" value="1080"/>
+      <param name="header_label" value=""/>
+      <param name="header_id" value=""/>
+      <param name="closebutton_visible" value="false"/>
+    </include>
+    <control type="group">
+      <width>1920</width>
+      <height>1080</height>
+      <centertop>50%</centertop>
+      <centerleft>50%</centerleft>
+      <control type="image">
+        <top>130</top>
+        <left>448</left>
+        <width>1</width>
+        <height>810</height>
+        <texture colordiffuse="dialog_fg_12">common/white.png</texture>
+      </control>
+      <control type="group">
+        <include content="DefaultAddonSettingButtonGradient">
+          <param name="id" value="5"/>
+          <param name="height" value="75"/>
+          <top>120</top>
+          <left>490</left>
+          <height>75</height>
+          <right>0</right>
+          <visible>ControlGroup(5).HasFocus()</visible>
+        </include>
+        <control type="grouplist" id="5">
+          <description>control area</description>
+          <top>120</top>
+          <left>490</left>
+          <right>0</right>
+          <width>1440</width>
+          <height>825</height>
+          <itemgap>0</itemgap>
+          <onup>300</onup>
+          <onleft>3</onleft>
+          <onright>60</onright>
+          <pagecontrol>60</pagecontrol>
+          <usecontrolcoords>true</usecontrolcoords>
+        </control>
+      </control>
+      <control type="button" id="7">
+        <description>Default Button</description>
+        <include content="DefaultSettingButton">
+          <param name="height" value="75" />
+        </include>
+      </control>
+      <control type="radiobutton" id="8">
+        <description>Default RadioButton</description>
+        <include content="DefaultSettingButton">
+          <param name="textwidth" value="1200"/>
+          <param name="height" value="75" />
+        </include>
+      </control>
+      <control type="spincontrolex" id="9">
+        <description>Default SpinControlex</description>
+        <include content="DefaultSettingButton">
+          <param name="textwidth" value="1200"/>
+          <param name="height" value="75" />
+        </include>
+        <aligny>center</aligny>
+      </control>
+      <control type="sliderex" id="13">
+        <description>Default Slider</description>
+        <include content="DefaultSettingButton">
+          <param name="height" value="75" />
+        </include>
+        <aligny>center</aligny>
+      </control>
+      <control type="label" id="14">
+        <description>Default Label</description>
+        <textoffsetx>0</textoffsetx>
+        <top>0</top>
+        <height>75</height>
+        <label/>
+        <align>center</align>
+        <aligny>center</aligny>
+        <font>font_tiny_hintlabel</font>
+        <textcolor>dialog_fg_30</textcolor>
+      </control>
+      <control type="group">
+        <depth>DepthContentPanel</depth>
+        <left>0</left>
+        <include content="DefaultAddonSettingButtonGradient">
+          <param name="id" value="3"/>
+          <param name="height" value="75"/>
+          <top>120</top>
+          <height>75</height>
+          <width>450</width>
+          <left>0</left>
+          <visible>!ControlGroup(18).HasFocus</visible>
+        </include>
+        <control type="grouplist" id="3">
+          <description>button area</description>
+          <left>0</left>
+          <top>120</top>
+          <width>450</width>
+          <height>825</height>
+          <usecontrolcoords>true</usecontrolcoords>
+          <onright>5</onright>
+          <onup>300</onup>
+          <ondown>18</ondown>
+          <include>Defs_Settings_OnUp</include>
+        </control>
+        <control type="button" id="10">
+          <description>Default Category Button</description>
+          <left>0</left>
+          <height>75</height>
+          <width>450</width>
+          <textoffsetx>40</textoffsetx>
+          <aligny>center</aligny>
+          <texturefocus colordiffuse="00ffffff">lists/focus-rounded.png</texturefocus>
+          <texturenofocus/>
+        </control>
+      </control>
+      <control type="group">
+        <right>0</right>
+        <top>120</top>
+        <bottom>137</bottom>
+        <width>60</width>
+        <control type="scrollbar" id="60">
+          <right>6</right>
+          <width>8</width>
+          <orientation>vertical</orientation>
+          <texturesliderbackground/>
+          <animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+          <onleft>5</onleft>
+          <onright>5</onright>
+          <animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+          <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+          <animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
+          <animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+          <hitrect x="0" y="0" w="60" h="100%"/>
+        </control>
+      </control>
+      <control type="group">
+        <height>120</height>
+        <width>1920</width>
+        <control type="image">
+          <left>0</left>
+          <top>0</top>
+          <height>95</height>
+          <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+        </control>
+        <control type="image">
+          <left>0</left>
+          <top>95</top>
+          <height>1</height>
+          <texture colordiffuse="main_fg_30">common/white.png</texture>
+        </control>
+      </control>
+      <include content="Defs_Settings_Changer">
+        <ondown>5</ondown>
+      </include>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>0</bottom>
+      <height>95</height>
+      <texture colordiffuse="dialog_bg_30">common/white.png</texture>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>95</bottom>
+      <height>1</height>
+      <texture colordiffuse="main_fg_30">common/white.png</texture>
+    </control>
+    <control type="textbox" id="6">
+      <description>description area</description>
+      <bottom>10</bottom>
+      <right>20</right>
+      <width>900</width>
+      <height>70</height>
+      <font>font12</font>
+      <align>right</align>
+      <aligny>center</aligny>
+      <textcolor>$VAR[ColorHighlight]</textcolor>
+      <autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+    </control>
+    <control type="image">
+      <left>0</left>
+      <bottom>93</bottom>
+      <height>5</height>
+      <width>340</width>
+      <texture colordiffuse="main_fg_100">common/white.png</texture>
+      <visible>ControlGroup(18).HasFocus</visible>
+      <animation effect="slide" start="0" end="0,0" time="50" condition="Integer.IsEqual(Container(18).Position,0)">Conditional</animation>
+      <animation effect="slide" start="0" end="340,0" time="50" condition="Integer.IsEqual(Container(18).Position,1)">Conditional</animation>
+      <animation effect="slide" start="0" end="680,0" time="50" condition="Integer.IsEqual(Container(18).Position,2)">Conditional</animation>
+    </control>
+    <control type="grouplist" id="18">
+      <top>1000</top>
+      <orientation>horizontal</orientation>
+      <control type="radiobutton" id="22">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>3</onup>
+        <font>font_menu</font>
+        <label>$LOCALIZE[10040]</label>
+        <onclick>ActivateWindow(addonbrowser)</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/addon.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/addon.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/addon.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/addon.png</textureradiooffnofocus>
+      </control>
+      <control type="radiobutton" id="24">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>3</onup>
+        <font>font_menu</font>
+        <label>7</label>
+        <onclick>ActivateWindow(filemanager)</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/files.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/files.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/files.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/files.png</textureradiooffnofocus>
+      </control>
+      <control type="radiobutton" id="20">
+        <bottom>10</bottom>
+        <left>20</left>
+        <width>340</width>
+        <height>70</height>
+        <onup>3</onup>
+        <font>font_menu</font>
+        <onclick>SettingsLevelChange</onclick>
+        <textoffsetx>85</textoffsetx>
+        <textoffsety>0</textoffsety>
+        <texturefocus />
+        <texturenofocus/>
+        <radioposx>32</radioposx>
+        <radioposy>0</radioposy>
+        <radiowidth>48</radiowidth>
+        <radioheight>48</radioheight>
+        <textureradioonfocus colordiffuse="B3ededed">special://skin/extras/icons/settings.png</textureradioonfocus>
+        <textureradioonnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/settings.png</textureradioonnofocus>
+        <textureradioofffocus colordiffuse="B3ededed">special://skin/extras/icons/settings.png</textureradioofffocus>
+        <textureradiooffnofocus colordiffuse="dialog_fg_70">special://skin/extras/icons/settings.png</textureradiooffnofocus>
+      </control>
+    </control>
+    <control type="label" id="2">
+      <description>breadcrumbs label</description>
+      <visible>False</visible>
+    </control>
+  </controls>
+</window>
